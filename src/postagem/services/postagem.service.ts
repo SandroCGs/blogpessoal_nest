@@ -50,4 +50,12 @@ export class PostagemService {
       },
     });
   }
+
+  // async findAllByTexto(texto: string): Promise<Postagem[]> {
+  //   return await this.postagemRepository.find({
+  //     where: {
+  //       texto: ILike(`%${texto}%`),
+  //     },
+  //   });
+  // }
 }

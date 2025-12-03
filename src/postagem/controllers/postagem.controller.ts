@@ -52,4 +52,10 @@ export class PostagemController {
   findAllByTitulo(@Param('titulo') titulo: string): Promise<Postagem[]> {
     return this.postagemService.findAllByTitulo(titulo);
   }
+
+  // @Get('/texto/:texto')
+  // @HttpCode(HttpStatus.OK)
+  // findAllByTexto(@Param('texto') texto: string): Promise<Postagem[]> {
+  //   return this.postagemService.findAllByTexto(texto);
+  // }
 }
