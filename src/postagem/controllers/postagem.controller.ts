@@ -7,6 +7,7 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  Put,
 } from '@nestjs/common';
 import { PostagemService } from '../services/postagem.service';
 import { Postagem } from '../entities/postagem.entity';
@@ -31,5 +32,11 @@ export class PostagemController {
   @HttpCode(HttpStatus.CREATED) //201
   create(@Body() postagem: Postagem): Promise<Postagem> {
     return this.postagemService.create(postagem);
+  }
+
+  @Put()
+  @HttpCode(HttpStatus.OK)
+  update(@Body() postagem: Postagem): Promise<Postagem> {
+    return this.postagemService.update(postagem);
   }
 }
