@@ -1,10 +1,12 @@
 import {
+  Body,
   Controller,
   Get,
   HttpCode,
   HttpStatus,
   Param,
   ParseIntPipe,
+  Post,
 } from '@nestjs/common';
 import { TemaService } from '../services/tema.service';
 import { Tema } from '../entities/tema.entity';
@@ -29,5 +31,11 @@ export class TemaController {
   @HttpCode(HttpStatus.OK)
   findAllByDescricao(@Param('descricao') descricao: string): Promise<Tema[]> {
     return this.temaService.findAllByDescricao(descricao);
+  }
+
+  @Post()
+  @HttpCode(HttpStatus.CREATED)
+  create(@Body() tema: Tema): Promise<Tema> {
+    return this.temaService.create(tema);
   }
 }
