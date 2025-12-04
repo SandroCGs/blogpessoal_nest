@@ -24,4 +24,10 @@ export class TemaController {
   findAll(): Promise<Tema[]> {
     return this.temaService.findAll();
   }
+
+  @Get('/descricao/:descricao')
+  @HttpCode(HttpStatus.OK)
+  findAllByDescricao(@Param('descricao') descricao: string): Promise<Tema[]> {
+    return this.temaService.findAllByDescricao(descricao);
+  }
 }
