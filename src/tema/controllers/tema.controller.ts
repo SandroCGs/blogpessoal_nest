@@ -7,6 +7,7 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  Put,
 } from '@nestjs/common';
 import { TemaService } from '../services/tema.service';
 import { Tema } from '../entities/tema.entity';
@@ -37,5 +38,11 @@ export class TemaController {
   @HttpCode(HttpStatus.CREATED)
   create(@Body() tema: Tema): Promise<Tema> {
     return this.temaService.create(tema);
+  }
+
+  @Put()
+  @HttpCode(HttpStatus.OK)
+  update(@Body() tema: Tema): Promise<Tema> {
+    return this.temaService.update(tema);
   }
 }
