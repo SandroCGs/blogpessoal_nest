@@ -2,6 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ILike, Repository } from 'typeorm';
 import { Tema } from '../entities/tema.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { DeleteResult } from 'typeorm/browser';
 
 @Injectable()
 export class TemaService {
@@ -53,5 +54,11 @@ export class TemaService {
     await this.findById(tema.id);
 
     return await this.temaRepository.save(tema);
+  }
+
+  async delete(id: number): Promise<DeleteResult> {
+    await this.findById(id);
+
+    return await this.temaRepository.delete(id);
   }
 }
