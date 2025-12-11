@@ -7,6 +7,7 @@ import { jwtConstants } from './constants/constants';
 import { AuthService } from './services/auth.service';
 import { LocalStrategy } from './strategy/local.strategy';
 import { AuthController } from './controllers/auth.controller';
+import { JwtStrategy } from './strategy/jwt.strategy';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { AuthController } from './controllers/auth.controller';
       signOptions: { expiresIn: '1h' },
     }),
   ],
-  providers: [Bcrypt, AuthService, LocalStrategy],
+  providers: [Bcrypt, AuthService, LocalStrategy, JwtStrategy],
   controllers: [AuthController],
   exports: [Bcrypt],
 })
