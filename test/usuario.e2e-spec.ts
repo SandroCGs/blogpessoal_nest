@@ -121,4 +121,18 @@ describe('Testes dos módulos Usuario e Auth (e2e)', () => {
       })
       .expect(400);
   });
+
+  it('6 - Deve excluir um Usuario', async () => {
+    await request(app.getHttpServer())
+      .delete(`/usuarios/${usuarioId}`)
+      .set('Authorization', token)
+      .expect(404);
+  });
+
+  it('7 - Não deve excluir um Usuario inexistente', async () => {
+    await request(app.getHttpServer())
+      .delete('/usuarios/9999')
+      .set('Authorization', token)
+      .expect(404);
+  });
 });
