@@ -1,3 +1,30 @@
+# 🚀 Blog Pessoal API
+
+API RESTful completa para um blog pessoal, desenvolvida como parte do bootcamp **Generation Javascript - Turma 10**. Esta aplicação backend implementa operações CRUD para gerenciamento de postagens e usuários, com foco em boas práticas, testes e preparação para deploy.
+
+## ✨ Funcionalidades Principais
+- **CRUD Completo**: Criação, leitura, atualização e exclusão de postagens (`Post`) e usuários (`User`).
+- **Banco de Dados Relacional**: Configurado para usar **PostgreSQL** em ambiente de produção e **MySQL** para desenvolvimento local.
+- **Testes End-to-End (e2e)**: Suite de testes automatizados para validar as funcionalidades principais da API.
+- **Pronto para Deploy**: Estrutura configurada para implantação em serviços cloud como o **Render**.
+
+## 🛠️ Tecnologias Utilizadas
+- **Backend Framework**: [NestJS](https://nestjs.com/)
+- **Linguagem**: TypeScript
+- **Banco de Dados**: PostgreSQL (Produção) / MySQL (Desenvolvimento)
+- **ORM**: TypeORM
+- **Testes**: Jest (para testes e2e)
+- **Controle de Versão**: Git & GitHub
+
+## 📡 Deploy
+
+Esta API está em produção e pode ser acessada publicamente. O deploy foi realizado na plataforma **Render**, utilizando **PostgreSQL** como banco de dados gerenciado.
+
+- **🌐 Link da API em Produção:** https://blogpessoal-nest-a8ro.onrender.com/
+- **📊 Status do Serviço:** A aplicação utiliza o plano gratuito do Render, que coloca o serviço em suspensão após períodos de inatividade. O primeiro acesso após esse período pode levar alguns segundos para "acordar" o servidor.
+
+---
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
