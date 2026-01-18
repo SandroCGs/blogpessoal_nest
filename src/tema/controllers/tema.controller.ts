@@ -14,22 +14,25 @@ import {
 import { TemaService } from '../services/tema.service';
 import { Tema } from '../entities/tema.entity';
 import { JwtAuthGuard } from '../../auth/guard/jwt-auth.guard';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Tema')
 @UseGuards(JwtAuthGuard)
 @Controller('/temas')
+@ApiBearerAuth()
 export class TemaController {
   constructor(private readonly temaService: TemaService) {}
-
-  @Get('/:id')
-  @HttpCode(HttpStatus.OK)
-  findById(@Param('id', ParseIntPipe) id: number): Promise<Tema> {
-    return this.temaService.findById(id);
-  }
 
   @Get()
   @HttpCode(HttpStatus.OK)
   findAll(): Promise<Tema[]> {
     return this.temaService.findAll();
+  }
+
+  @Get('/:id')
+  @HttpCode(HttpStatus.OK)
+  findById(@Param('id', ParseIntPipe) id: number): Promise<Tema> {
+    return this.temaService.findById(id);
   }
 
   @Get('/descricao/:descricao')

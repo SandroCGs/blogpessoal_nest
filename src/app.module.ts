@@ -8,6 +8,7 @@ import { PostagemModule } from './postagem/postagem.module';
 import { TemaModule } from './tema/tema.module';
 import { AppService } from './app.service';
 import { UsuarioModule } from './usuario/usuario.module';
+import { DevService } from './data/services/DevService';
 
 @Module({
   imports: [
